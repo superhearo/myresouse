@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .aui-img-round {
+            margin: 0 auto 0 auto;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .tongji {
+            height: 0.9rem;
+            float: left;
+        }
+
+        .tongji img {
+            height: 0.7rem;
+            line-height: 0.9rem;
+            color: #157df2;
+            padding-right: 0.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .aui-img-round {}
+
+        .aui-list .aui-list-item-media img {
+            width: 0.9rem;
+        }
+
+        .aui-list .aui-list-item-media {
+            width: 1.2rem;
+            padding: 0rem;
+        }
+
+        .aui-media-list-item-inner {
+            width: 50%;
+            float: left;
+        }
+
+        .aui-list .aui-list-item {
+            background-image: linear-gradient(0, #ffffff, #ffffff 50%, transparent 50%);
+            background-image: -webkit-linear-gradient(90deg, #ffffff, #ffffff 50%, transparent 50%);
+        }
+
+        .aui-bar-nav {
+            background-color: #3C9CFF;
+        }
+    </style>
+    <script src="../script/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="aui-bar aui-bar-nav" id="aui-header">
+            <div class="aui-pull-left aui-btn">
+                <span class="aui-iconfont aui-icon-left" onclick="closeWin();"></span>
+            </div>
+            <div class="aui-title">我的足迹</div>
+        </header>
+        <section class="aui-grid">
+            <div class="aui-row">
+                <div class="aui-col-xs-4" onclick="wdqd();">
+                    <img src="../image/qiangdan.png" class="aui-img-round" />
+                    <div class="aui-grid-label">我的抢单</div>
+                </div>
+                <div class="aui-col-xs-4" onclick="wdth()">
+                    <img src="../image/tonghua.png" class="aui-img-round" />
+                    <div class="aui-grid-label">我的通话</div>
+                </div>
+                <div class="aui-col-xs-4" onclick="wdll()">
+                    <img src="../image/liulan.png" class="aui-img-round" />
+                    <div class="aui-grid-label">我的浏览</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="aui-card-list">
+            <div class="aui-card-list-header">
+                <div>
+                    <div class="tongji">
+
+                        <img src="../image/shuxian.png" class="tongji" />
+
+                    </div>
+
+                    统计</div>
+            </div>
+        </div>
+
+        <div class="aui-content aui-margin-b-15" style="border-bottom: 1px solid #dddddd;">
+            <ul class="aui-list aui-media-list">
+
+                <li class="aui-list-item aui-list-item-middle" style="height:4rem;">
+                    <div class="aui-media-list-item-inner" style="height:4rem;">
+                        <div class="aui-list-item-media wechat-avatar">
+                            <img src="../image/yundanl.png" />
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title">运单量</div>
+                            </div>
+                            <div class="aui-list-item-text aui-font-size-12">
+                                我的运单情况统计
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-media-list-item-inner" style="height:4rem;">
+                        <div class="aui-list-item-media wechat-avatar">
+                            <img src="../image/yundanl.png" />
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title">分享量</div>
+                            </div>
+                            <div class="aui-list-item-text aui-font-size-12">
+                                我的名片以及运单的分享统计
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  
+    wdqd = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openWin({
+
+                   name: 'wdqd_frm',
+                   url: './wdqd_win.html',
+
+                  })
+
+
+    }
+
+    wdth = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openWin({
+
+                   name: 'wdth_frm',
+                   url: './wdth_win.html',
+
+                  })
+
+
+    }
+
+    wdll = function(){
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        api.openWin({
+
+                   name: 'wdll_frm',
+                   url: './wdll_win.html',
+
+                  })
+
+
+    }
+
+    apiready = function() {
+
+
+    };
+
+    function closeWin() {
+        api.closeWin({});
+    }
+</script>
+
+</html>

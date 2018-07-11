@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+    	html,body{
+    		height: 98%;
+			background: transparent;
+			-webkit-touch-callout: none;
+			font-family: Tahoma, Geneva, sans-serif;
+			font-style: normal;
+			font-weight:500;
+		}
+		#dialog{
+			background-color: #fff;
+			border-radius: 6px;
+			position: absolute; margin: auto;
+			left: 0; right: 0; top: 0; bottom: 0;
+			width: 90%; height: 310px;
+
+		}
+		#dialog.in{
+			-webkit-transform: scale(1);
+			transform:scale(1);
+			opacity: 1;
+		}
+		.frametop{
+     width: 100%;
+		 height: 30px;
+		 margin: 0 auto 0 auto;
+		 font-size: 0.75rem;
+
+		}
+		.framebanner{
+			width: 96%;
+			height: 120px;
+			margin: 0 auto 0 auto;
+		}
+		.framecenter{
+			width: 96%;
+			/*height: 35px;*/
+			margin: 0 auto 0 auto;
+		  font-size: 0.75rem;
+		}
+		.framedomn{
+			width: 100%;
+			height: 79px;
+			/*margin: 0 auto 0 auto;*/
+			background-color: red;
+		}
+
+		.lileft{
+			width: 5%;
+			float: left;
+			height: 30px;
+		}
+		.licenter{
+			float: left;
+			width: 90%;
+			text-align: center;
+		  line-height: 30px;
+		}
+		.liright{
+
+			width: 5%;
+			float: left;
+			height: 30px;
+			text-align: right;
+		}
+		.fbright{
+      width: 75%;
+			height: 100%;
+			float: left;
+			font-size: 0.75rem;
+			margin: 0px;
+			font-weight:600;
+		}
+		.fbleft{
+			width: 25%;
+			height: 100%;
+			float: left;
+		}
+		.fbleft img{
+			width:50px;
+			height:50px;
+		  margin: 35px auto 35px auto;
+		}
+
+		.fbright li{
+			width: 100%;
+			font-size: 0.75rem;
+			height: 25px;
+			line-height: 25px;
+			white-space:nowrap;
+		 overflow: hidden;
+		 text-overflow:ellipsis;
+		 color: #6f6a6a;
+		 font-weight: 900;
+		}
+		.xxcenterleft{
+			float: left;
+     line-height: 25px;
+		}
+		.xxcenterright{
+			margin-left: 20px;
+		}
+   .aui-list{
+	background-size: 100% 0px;
+   }
+
+	 .aui-bar-btn-item.aui-active {
+	 	background-color: #ffffff;
+		color: #039be5;
+	 }
+
+	.aui-bar-btn-item{
+		border-color: #b6bcc2;
+	}
+	.aui-list-item-arrow:before{
+		border: 0px solid #dddddd;
+	}
+	.aui-list-item-right{
+	text-overflow:clip;
+	width: 58%;
+	}
+	.aui-list .aui-list-item-right, .aui-list-item-title-row em{
+		font-size: 0.7rem;
+	}
+	.aui-list .aui-list-item-media{
+		    width: 3.0rem;
+				padding-right: 0.5rem;
+				margin-left:-10px;
+	}
+	.xxcenterleft{
+		width:15px;
+		height:15px;
+		margin-top: 5xp;
+	}
+  .bzj img{
+  	width:15px;height:15px;float:left;margin-top: 3px;
+  }
+	.bzj span{
+			float:left;font-size:0.65rem;color:#ADADAD;margin-left:5px;
+	}
+  .aui-list-item-inner.aui-list-item-arrow {
+	      padding-right: 0rem;
+  }
+	.aui-list .aui-list-item-right, .aui-list-item-title-row em {
+  max-width: 90%;
+	}
+	.aui-bar-btn{
+  min-height:46px;
+	}
+	.aui-iconfont {
+		font-size: 0.9rem;
+	}
+	.aui-list-item-left{
+		width:42%; ;
+	}
+
+    </style>
+</head>
+<body>
+	<div id="dialog">
+		<!-- 头部-->
+		<div class="frametop">
+				<div class="lileft"></div>
+				<div class="licenter">
+					<span style="font-size:0.7rem;">已为你匹配到合适的车辆</span>
+					<span style="color:red; margin-left:10px;font-size:0.8rem;"> 待司机到位 </span>
+				</div>
+				<div class="liright">
+					<div class="aui-col-xs-3" style="width:15px;heigh:15px;float:right;margin-right:5px;">
+	            <i class="aui-iconfont aui-icon-close" onclick="closeWin();"></i>
+	        </div>
+				</div>
+		</div>
+		<!--中部货运信息 -->
+		<div class="framebanner">
+			<div class="fbright">
+			<ul>
+				<li style="color:F8A62A;font-weight:500;">13:35</li>
+				<li>
+					<div class="xxcenterleft" style=margin-top:5px;>
+						<img src="../image/greeno.png"  />
+					</div>
+					<div class="xxcenterright">河南省郑州市城管区xxx路xx号</div>
+				</li>
+				<li>
+					<div class="xxcenterleft" style=margin-top:5px;>
+						<img src="../image/redo.png" />
+					</div>
+					<div class="xxcenterright">河南省郑州市城管区xxx路xx号</div>
+				</li>
+				<li>
+					<div class="xxcenterleft" style="margin-top:5px;">
+						<img src="../image/fangkuai.png" />
+					</div>
+					<div class="xxcenterright" style="font-weight:400;">河南省郑州市城管区xxx路xx号</div>
+				</li>
+			</ui>
+
+			</div>
+			<div class="fbleft">
+				<img src="../image/phone.png"/>
+			</div>
+		</div>
+
+		<!--承运人信息-->
+		<div class="framecenter">
+			承运人信息
+		</div>
+
+		<div class="aui-card-list" style="padding-top:0.5rem;">
+
+	 <div class="aui-card-list-content">
+			 <ul class="aui-list aui-media-list">
+					 <li class="aui-list-item aui-list-item-middle">
+							 <div class="aui-media-list-item-inner">
+									 <div class="aui-list-item-media">
+											 <img src="../image/i5.png" class="aui-img-round aui-list-img-sm">
+									 </div>
+									 <div class="aui-list-item-inner aui-list-item-arrow">
+											 <div class="aui-list-item-text">
+													 <div class="aui-list-item-left">豫A123D</div>
+													 <div class="aui-list-item-right">车型</div>
+											 </div>
+											 <div class="aui-list-item-text ">
+													<div class="aui-list-item-left">张三</div>
+												 <div class="aui-list-item-right" style="color:#F8D394;font-weight:600;font-size:0.75rem;">运价：500元</div>
+											</div>
+											<div class="aui-list-item-text ">
+										  <div class="aui-list-item-left">
+													 <div class="bzj">
+														 <img src="../image/huidun.png"/>
+														 <div style="float:left;font-size:0.7rem;color:#757575;margin-left:5px;float:left;">未交保证金
+														 </div>
+												 </div></div>
+												 <div class="aui-list-item-right">接单时间:13:25</div>
+
+									 </div>
+									 </div>
+							 </div>
+					 </li>
+			 </ul>
+	 </div>
+
+<!--底部按钮-->
+	<div class="aui-bar aui-bar-btn" style="width:100%; ">
+		<div class="aui-bar-btn-item aui-active" style="width:50%;">撤销</div>
+		<div class="aui-bar-btn-item" style="width:50%;">查看位置</div>
+  </div>
+
+	</div>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    }
+    var bar = document.querySelectorAll(".aui-bar-btn");
+    if(bar){
+        for(var i=0; i<bar.length;i++){
+            var d = bar[i];
+            var tab = new auiTab({
+                element:bar[i],
+                repeatClick:true
+            },function(ret){
+                if(ret.dom.parentNode.getAttribute("type") && ret.dom.parentNode.getAttribute("type")=="count"){
+                    var count = parseInt(document.getElementById("count").value);
+                    if(ret.index==2)return;
+                    if(ret.index==1){
+                        document.getElementById("count").value = count-1;
+                    }
+                    if(ret.index==3){
+                        document.getElementById("count").value = count+1;
+                    }
+                }
+            });
+
+        }
+    }
+		function closeWin(){
+				api.closeWin({
+				});
+		}
+</script>
+</html>

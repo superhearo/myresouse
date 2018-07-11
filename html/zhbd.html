@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <style>
+          body,html{
+
+            font-weight: 500px;
+            background-color: white;
+
+          }
+          .aui-bar-nav.aui-bar-light .aui-iconfont {
+            color: black;
+          }
+          .aui-title{
+            /*font-weight: bold;
+            font-size: 0.85rem;*/
+            color: #2c2727;
+          }
+          .aui-list .aui-list-header{
+            font-size: 0.75rem;
+            font-weight: 600px;
+            background-color: #F8F8F8;
+          }
+
+          .aui-list{
+            background-image:linear-gradient(0,#ffffff,#ffffff 50%,transparent 50%);
+          }
+          .aui-list-item{
+            font-size: 0.75rem;
+            font-weight: 500;
+
+          }
+          img.aui-img-round{
+            border-radius: 0px;
+       }
+       .aui-info-item img{
+       width:0.85rem;
+       }
+       .aui-radio, .aui-checkbox{
+         width: 0.8rem;
+         height: 0.8rem;
+       }
+       .aui-list.aui-form-list .aui-list-item-inner{
+         padding-right: 15px;
+       }
+       .aui-list .aui-list-item{
+         background-image: linear-gradient(0,#F0F0F0,#F0F0F0 50%,rgba(5, 4, 4, 0) 50%);
+       }
+       .aui-list-item-right{
+         width: 30%;
+         text-align: right;
+       }
+       .ybd{
+         color: #6D6D6D;
+       }
+       .ljbd{
+         color:#14A0F8 ;
+       }
+       /*.aui-list-item{
+         font-weight: 600;
+       }*/
+      </style>
+  </head>
+  <body>
+       <header class="aui-bar aui-bar-nav aui-bar-light">
+            <div class="aui-pull-left aui-btn">
+                <span class="aui-iconfont aui-icon-left" onclick="closeWin()"></span>
+            </div>
+            <div class="aui-title">账号绑定</div>
+        </header>
+
+      <ul class="aui-list aui-form-list">
+
+
+
+            <li class="aui-list-header" style="background-color:#F8F8F8;">
+
+            </li>
+
+
+
+            <li class="aui-list-item">
+                      <div class="aui-list-item-inner">
+                        <div class="aui-info-item">
+                        <img src="../image/zhifubao.png" class="aui-img-round" />
+                        </div>
+                          <div class="aui-list-item-inner" style="margin-left:10px;">支付宝</div>
+                          <div class="aui-list-item-right">
+                              <span class="ybd">已绑定</span>
+                          </div>
+                      </div>
+            </li>
+            <li class="aui-list-item">
+                      <div class="aui-list-item-inner">
+                        <div class="aui-info-item">
+                        <img src="../image/weixin.png" class="aui-img-round" />
+                        </div>
+                          <div class="aui-list-item-inner" style="margin-left:10px;">微信</div>
+                          <div class="aui-list-item-right">
+                            <span class="ljbd">立即绑定</span>
+                          </div>
+                      </div>
+            </li>
+            <li class="aui-list-item">
+                      <div class="aui-list-item-inner">
+                        <div class="aui-info-item">
+                        <img src="../image/yinhangka.png" class="aui-img-round" />
+                        </div>
+                          <div class="aui-list-item-inner" style="margin-left:10px;">银行卡</div>
+                          <div class="aui-list-item-right">
+                              <span class="ljbd">立即绑定</span>
+                          </div>
+                      </div>
+            </li>
+            <br>
+
+        </ul>
+
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+      function closeWin(){
+          api.closeWin({
+          });
+      }
+  </script>
+  </html>

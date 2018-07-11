@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/hui.css"/>
+    <style>
+    .left-info{display:inline-block;position:relative;left:0.15rem;}
+    .my-item{
+      padding-top: 10px;
+    }
+    .aui-list-item-inner.aui-swipe-handle {
+         overflow-x: hidden;
+         position: relative;
+         z-index: 1;
+         background-color: #ffffff;
+     }
+     .aui-swipe-btn {
+         position: absolute;
+         right: 0;
+         z-index: 0;
+         height: 100%;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         display: -webkit-box;
+         display: -webkit-flex;
+         display: flex;
+         -webkit-box-flex: 1;
+         -webkit-box-pack: justify;
+         -webkit-justify-content: space-between;
+                 justify-content: space-between;
+         -webkit-box-align: center;
+         -webkit-align-items: center;
+                 align-items: center;
+     }
+     .aui-swipe-btn .aui-btn {
+         border-radius: 0;
+         height: 100%;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         display: -webkit-box;
+         display: -webkit-flex;
+         display: flex;
+         -webkit-box-align: center;
+         -webkit-align-items: center;
+                 align-items: center;
+
+     }
+     .donghua {
+         -webkit-transition-duration:300ms;
+         transition-duration:300ms;
+     }
+     .bottom{
+       background-color: #ffffff;
+     }
+     .aui-list .aui-list-item{
+       background-image: linear-gradient(0,#ffffff,#ffffff 50%,transparent 50%);
+       background-image: -webkit-linear-gradient(90deg,#ffffff,#ffffff 50%,transparent 50%);
+     }
+     .aui-list{
+       background-image: linear-gradient(0,#ffffff,#ffffff 50%,transparent 50%);
+     }
+     .left-info{
+           height: 1.4rem;
+     }
+    </style>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+</head>
+<body>
+  <div  id="app">
+
+
+            <div class="aui-content aui-margin-b-15" id="userid" v-for="list in lists">
+               <ul class="aui-list">
+                   <li class="aui-list-item">
+                       <div class="aui-list-item-inner aui-swipe-handle">
+                         <div class="my-item"  >
+                           <div class="left ">
+                             <div class="left-img-con">
+                                 <img src="../image/gril.jpg">
+                             </div>
+                             <div class="left-info">
+                               <p v-if="list.category==1">{{list.driverName?list.driverName:'小白'}}</p>
+                               <p v-if="list.category==2">{{list.corpName?list.corpName:'小白'}}</p>
+                              </div>
+                             <div style="position:relative;margin-top: -0.5rem;margin-left: 0.2rem;">
+                               <div style="position:absolute;top:0.05rem;left:0.2rem">
+                                   <img src="../image/renzheng.png" style="width:0.65rem;">
+                               </div>
+                               <div class="left-info"  v-if="list.category==0" style="left:7px;">游客</div>
+                                <div class="left-info"  v-if="list.category==1">司机</div>
+                               <div class="left-info"  v-if="list.category==2">专线</div>
+                             </div>
+                           </div>
+                           <div class="center">
+                             <div class="center-bar ">
+                               <div class="center-icon-con">
+                                 <div class="my-dot dot-green"></div>
+                               </div>
+                               <div class="center-bar-info aui-ellipsis">   {{list.loadAddr}} → {{list.arrivalAddr1||list.arrivalAddr2||list.arrivalAddr3}}</div>
+                             </div>
+                             <div class="center-bar ">
+                               <div class="center-icon-con">
+                                 <img src="../image/fangkuai.png" >
+                               </div>
+                               <div class="center-bar-info aui-ellipsis">
+                                 {{list.carLength?list.carLength+'米/':''}}
+                                 {{list.carType?list.carType+'/':''}}
+                                 {{list.name?list.name+'/':''}}
+                                 {{list.weightMin?list.weightMin:''}}
+                                 {{list.weightMax?'~'+list.weightMax:''}}
+                                 {{list.weightUnit}}
+                                 {{list.cubeMax?'~'+list.cubeMax:''}}
+                                 {{list.cubeUnit}}
+                               </div>
+                             </div>
+                             <div class="center-bar ">
+                               <div class="center-icon-con">
+                                 <!-- <div class="my-dot dot-green"></div> -->
+                               </div>
+                               <div class="center-bar-info ">
+                                 <span>约:xxxkm</span>
+                                 <span class='aui-text-warning my-pull-right'>报价:900</span>
+                               </div>
+                             </div>
+                           </div>
+                           <div class="right " >
+                             <span class="aui-ellipsis">10:09</span>
+                              <p v-if="lists.success"><img src="../image/chenggonmg.png" style="width:2rem;"></p>
+                              <p v-else><img src="../image/weizhongdan.png" style="width:2rem;"></p>
+                         </div>
+                           <div class="bottom"></div>
+                         </div>
+                       </div>
+                       <div class="aui-swipe-btn">
+                           <div class="aui-btn aui-btn-danger" onclick="movediv()">删除</div>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+
+    <div v-if="lists.length<=0">
+     <div style="text-align:center;margin-top:1rem;color:#adadad;">您还未参与抢单哦！</div>
+   </div>
+
+  </div>
+
+
+
+</body>
+</html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-list-swipe.js"></script>
+<script type="text/javascript">
+    // alert(document.body.offsetHeight)
+
+    var app = new Vue({
+      el:"#app",
+      data:{
+        lists:[]
+      }
+    })
+
+    apiready = function(){
+         api.setRefreshHeaderInfo({
+             visible: true,
+             loadingImg: 'widget://image/refresh.png',
+             bgColor: '#ccc',
+             textColor: '#fff',
+             textDown: '下拉刷新...',
+             textUp: '松开刷新...',
+             showTime: true
+         }, function(ret, err){
+           loadGoodsList()
+         });
+
+         loadGoodsList()
+       }
+ loadGoodsList = function(){
+        //user = $api.getStorage('userInfo');
+          // token: user.TOKEN,
+          // iphone:user.user.iphone,
+          // userId:user.user.id
+       api.ajax({
+           url: 'http://192.168.0.236:8769/oper/my',
+           method: 'post',
+           data: {
+               values: {
+               token:'1f86c68fbd4f43708e869e7e9fdfac81',
+               userId:24,
+               page:1,
+               iphone:'13069502916'
+
+             }
+           }
+       }, function(ret, err) {
+          api.refreshHeaderLoadDone();
+           //api.alert({msg:ret });
+          if(ret){
+           if(ret.status){
+               console.log(JSON.stringify(ret))
+               app.lists = []
+               app.lists = ret.data
+               //api.alert({msg: app.lists  });
+             }
+           } else {
+             api.toast({
+                 msg: err.msg,
+                 duration: 2000,
+                 location: 'bottom'
+             });
+
+           }
+       });
+     }
+
+
+    var swipe = new auiListSwipe(function(ret){
+    })
+    movediv= function(){
+
+             var el = document.getElementById("userid");
+                el.remove(el);
+
+       }
+
+</script>

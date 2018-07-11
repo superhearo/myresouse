@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <style>
+          body{
+            font-size: 0.7rem;
+            font-weight: 500;
+
+          }
+          .llkf{
+            float:right;margin-right:10px;
+              font-size: 0.8rem;
+          }
+          .aui-bar-nav{
+            background-color: #ffffff;
+            background-image:  url("../image/qianbao-toutu.png") ;
+            background-size: 100% 100%;
+            background-repeat:no-repeat;
+            height: 190px;
+          }
+
+          .moneylast{
+            width: 100%;
+            height: 60%;
+            margin-top: 20%;
+            text-align: center;
+          }
+          .yue{
+            font-size: 2.0rem;
+          }
+          .yuejs{
+            font-size: 0.7rem;
+          }
+          .aui-info-item{
+            margin-left: 5px;
+          }
+          .aui-info-item img{
+          width:0.8rem;
+          }
+
+          .aui-list.aui-list-in .aui-list-item{
+          background-position: 0rem bottom
+          }
+          img.aui-img-round{
+            border-radius: 1%;
+       }
+      </style>
+  </head>
+  <body>
+    <header class="aui-bar aui-bar-nav">
+      <div class="aui-pull-left aui-btn">
+          <span class="aui-iconfont aui-icon-left" onclick="closeWin()"></span>
+      </div>
+         <div class="aui-title">钱包</div>
+         <div class="aui-pull-right aui-btn" style="font-size:0.75rem;">
+             联系客服
+         </div>
+         <div class="moneylast">
+            <div>
+            <ul>
+              <li style="height:47px;"><span class="yue">00.00</span></li>
+              <li style="height:47px;  font-size: 0.7rem;">  余额（元）</li>
+            </ul>
+            <div>
+
+         </div>
+
+
+     </header>
+
+   <ul class="aui-list aui-list-in">
+         <li class="aui-list-item">
+             <div class="aui-list-item-inner aui-list-item-arrow">
+             <div class="aui-info">
+             <div class="aui-info-item">
+             <img src="../image/qianbao-chongzhi.png" class="aui-img-round" />
+             </div>
+              <div class="aui-info-item">充值</div>
+             </div>
+             </div>
+         </li>
+
+         <li class="aui-list-item" style="margin-top:1px;">
+             <div class="aui-list-item-inner aui-list-item-arrow">
+             <div class="aui-info">
+             <div class="aui-info-item">
+             <img src="../image/qianbao-tixian.png"  class="aui-img-round" />
+             </div>
+              <div class="aui-info-item">提现</div>
+             </div>
+             </div>
+         </li>
+
+         <li class="aui-list-item" style="margin-top:1px;">
+             <div class="aui-list-item-inner aui-list-item-arrow">
+             <div class="aui-info">
+             <div class="aui-info-item">
+             <img src="../image/youhuiquan.png"  class="aui-img-round" />
+             </div>
+              <div class="aui-info-item">优惠券</div>
+             </div>
+             </div>
+         </li>
+
+         <li class="aui-list-item">
+             <div class="aui-list-item-inner aui-list-item-arrow">
+             <div class="aui-info">
+             <div class="aui-info-item">
+             <img src="../image/jiaoyijilu.png"  class="aui-img-round" />
+             </div>
+              <div class="aui-info-item">交易记录</div>
+             </div>
+             </div>
+         </li>
+
+         <li class="aui-list-item">
+             <div class="aui-list-item-inner aui-list-item-arrow">
+             <div class="aui-info">
+             <div class="aui-info-item">
+             <img src="../image/zhanghaobangding.png" class="aui-img-round" />
+             </div>
+              <div class="aui-info-item">账号绑定</div>
+             </div>
+             </div>
+         </li>
+     </ul>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+      function closeWin(){
+          api.closeWin({
+          });
+      }
+  </script>
+  </html>

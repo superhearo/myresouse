@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <style>
+          body,html{
+
+            font-weight: 500px;
+            background-color: white;
+          }
+          .aui-bar-nav.aui-bar-light .aui-iconfont {
+            color: black;
+          }
+          .aui-title{
+            /*font-weight: bold;
+            font-size: 0.85rem;*/
+            color: #2c2727;
+          }
+          .aui-list .aui-list-header{
+            font-size: 0.75rem;
+            font-weight: 600px;
+            background-color: #F8F8F8;
+          }
+          .aui-btn-block.aui-btn-sm{
+            width: 70%;
+            margin: 0 auto 0 auto;
+          }
+          .aui-grid [class*=aui-col-]{
+            padding: 0.35rem 0;
+          }
+          .aui-btn-block.aui-btn-sm{
+            height: 2.5rem;
+           line-height: 2.45rem;
+          }
+          .aui-list{
+            background-image:linear-gradient(0,#ffffff,#ffffff 50%,transparent 50%);
+          }
+          .aui-list-item{
+            font-size: 0.75rem;
+            font-weight: 500;
+
+          }
+          img.aui-img-round{
+            border-radius: 1%;
+       }
+       .aui-info-item img{
+       width:0.8rem;
+       }
+       .aui-radio, .aui-checkbox{
+         width: 0.8rem;
+         height: 0.8rem;
+       }
+       .aui-list.aui-form-list .aui-list-item-inner{
+         padding-right: 15px;
+       }
+       .aui-list .aui-list-item{
+         background-image: linear-gradient(0,#F0F0F0,#F0F0F0 50%,rgba(5, 4, 4, 0) 50%);
+       }
+      .aui-btn-block{
+        width:70%; margin:0 auto 0 auto;height:2.0rem;line-height:2.05rem;
+      }
+      .aui-btn-info {
+          color: #ffffff !important;
+          background-color: #3F9BFF !important;
+         }
+      </style>
+  </head>
+  <body>
+       <header class="aui-bar aui-bar-nav aui-bar-light">
+            <div class="aui-pull-left aui-btn">
+                <span class="aui-iconfont aui-icon-left" onclick="closeWin()"></span>
+            </div>
+            <div class="aui-title">充值</div>
+        </header>
+
+      <ul class="aui-list aui-form-list">
+        <li class="aui-list-header">
+         充值金额
+       </li>
+       <!-- 充值金额选择-->
+         <div class="selectprice" style="margin-top:10px;">
+         <section class="aui-grid">
+             <div class="aui-row">
+                 <div class="aui-col-xs-4">
+                   <div class="aui-btn aui-btn-block aui-btn-outlined aui-btn-sm">￥100</div>
+                 </div>
+                 <div class="aui-col-xs-4">
+                 <div class="aui-btn aui-btn-block aui-btn-outlined aui-btn-sm">￥300</div>
+                 </div>
+                 <div class="aui-col-xs-4">
+                 <div class="aui-btn aui-btn-block aui-btn-outlined aui-btn-sm">￥500</div>
+                 </div>
+                 <div class="aui-col-xs-4">
+                   <div class="aui-btn aui-btn-block aui-btn-outlined aui-btn-sm">￥800</div>
+                 </div>
+                 <div class="aui-col-xs-4">
+                 <div class="aui-btn aui-btn-block aui-btn-outlined aui-btn-sm">￥1000</div>
+                 </div>
+                 <div class="aui-col-xs-4">
+                 <div class="aui-btn aui-btn-block aui-btn-outlined aui-btn-sm">￥2000</div>
+                 </div>
+             </div>
+         </section>
+         <div>
+       <!--输入金额-->
+            <li class="aui-list-item">
+              <div class="aui-list-item-inner">
+
+                  <!-- <div class="aui-list-item-input"  style="border-bottom: solid 1px #F0F0F0;"> -->
+                  <div class="aui-list-item-input"  style="border-bottom: solid 1px #F0F0F0;">
+                      <input type="text" placeholder="输入充值金额">
+                  </div>
+              </div>
+            </li>
+
+
+            <li class="aui-list-header" style="background-color:#ffffff;height:3rem;">
+                      选择支付方式
+            </li>
+
+
+
+            <li class="aui-list-item">
+                      <div class="aui-list-item-inner">
+                        <div class="aui-info-item">
+                        <img src="../image/zhifubao.png" class="aui-img-round" />
+                        </div>
+                          <div class="aui-list-item-inner" style="margin-left:10px;">支付宝支付</div>
+                          <div class="aui-list-item-right">
+                              <input type="radio" class="aui-radio" name="zffs">
+                          </div>
+                      </div>
+            </li>
+            <li class="aui-list-item">
+                      <div class="aui-list-item-inner">
+                        <div class="aui-info-item">
+                        <img src="../image/weixin.png" class="aui-img-round" />
+                        </div>
+                          <div class="aui-list-item-inner" style="margin-left:10px;">微信支付</div>
+                          <div class="aui-list-item-right">
+                              <input type="radio" class="aui-radio" name="zffs">
+                          </div>
+                      </div>
+            </li>
+            <li class="aui-list-item">
+                      <div class="aui-list-item-inner">
+                        <div class="aui-info-item">
+                        <img src="../image/yinhangka.png" class="aui-img-round" />
+                        </div>
+                          <div class="aui-list-item-inner" style="margin-left:10px;">银行卡支付</div>
+                          <div class="aui-list-item-right">
+                              <input type="radio" class="aui-radio" name="zffs">
+                          </div>
+                      </div>
+            </li>
+            <br>
+        <li class="aui-list-item" style=" background-image: linear-gradient(0,#ffffff,#ffffff 50%,rgba(5, 4, 4, 0) 50%);">
+            <div class="aui-list-item-inner" >
+             <div class="aui-btn aui-btn-info aui-btn-block" style="border-radius: 25px;">立即充值</div>
+            </div>
+        </li>
+        </ul>
+
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+      function closeWin(){
+          api.closeWin({
+          });
+      }
+  </script>
+  </html>
